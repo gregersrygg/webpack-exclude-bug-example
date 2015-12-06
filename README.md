@@ -10,3 +10,15 @@ https://github.com/webpack/webpack/issues/1712
 6. Run `npm install && npm test`
 7. Output is "checksum-loader was applied successfully"
 8. Check dist/bundle.js to see that the checksum has been applied.
+
+The reason the first fails and the second works is because the `exclude` rule in webpack.config.js, and it is checked against the full path instead of a project-relative path (that I expected).
+
+```js
+preLoaders: [
+    {
+        test: /\.js$/,
+        loader: "checksum-loader",
+        exclude: /tmp/
+    }
+]
+```
