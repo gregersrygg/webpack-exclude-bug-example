@@ -1,0 +1,13 @@
+{
+  "name": "webpack-test",
+  "version": "1.0.0",
+  "description": "",
+  "main": "index.js",
+  "dependencies": {},
+  "devDependencies": {},
+  "scripts": {
+    "test": "webpack && grep 1dfb866915b9b686263994152a066771 dist/bundle.js && echo '\nchecksum-loader was applied successfully' || echo '\nchecksum-loader did not run'"
+  },
+  "author": "Framsie Kjerneteam <teamframsiekjerneteam@finn.no>",
+  "license": "MIT"
+}
